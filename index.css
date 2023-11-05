@@ -1,0 +1,120 @@
+*{
+
+    margin: 0;
+    padding: 0;
+    font-family: 'Unna', serif;
+
+}
+
+#cuerpo{
+
+    width: 100%;
+    height: max-content;
+    display: flex;
+    justify-content: center;
+    background: linear-gradient(to top left, #000, #444);
+    background-attachment: fixed;
+
+}
+
+#cuerpo-titulo{
+
+    width: 20%;
+    text-align: center;
+    position: fixed;
+    top: 3%;
+    left: 2%;
+    color: #fff;
+    font-size: 60px;
+
+}
+
+#cuerpo-fotos{
+
+    width: 40%;
+    height: max-content;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-sizing: border-box;
+    padding: 0 2%;
+    background-color: #444;
+    outline: 2px solid #fff;
+
+}
+
+.caja{
+
+    width: 100%;
+    height: 95vh;
+    margin: 20px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    transform: scale(0.5);
+    transition: transform 0.5s ease;
+
+}
+
+.informacion-persona{
+
+    width: 100%;
+    height: 10%;
+    display: grid;
+    grid-template-columns: 1fr 3fr 4fr;
+    grid-template-rows: repeat(2, 100%);
+    align-items: center;
+
+}
+
+.avatar{
+
+    border-radius: 100%;
+
+}
+
+.avatar > img{
+
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    clip-path: circle(50% 50%);
+    border-radius: 100%;
+
+}
+
+.name{
+
+    color: #fff;
+    margin-left: 10px;
+    font-size: 20px;
+
+}
+
+
+.location{
+
+    color: #fff;
+    font-size: 20px;
+    justify-self: flex-end;
+
+}
+
+
+.caja > IMG{
+
+    width: 100%;
+    height: 75%;
+    object-fit: cover;
+
+}
+
+.descripcion{
+
+    width: 100%;
+    height: 10%;
+    color: #fff;
+    font-size: 25px;
+
+}
