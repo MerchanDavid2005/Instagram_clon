@@ -11,23 +11,34 @@ const crearCuerpo = async () => {
     const respuesta = await traerDatos()
 
     for(let i of respuesta){
-
-        console.log(i)
+        
         let caja = document.createElement("div")
         caja.classList.add(`caja`)
         caja.setAttribute("numero", `${id}`)
         let perfil = document.createElement("div")
-        perfil.innerHTML = `
+        if(i.user.location != null){
+            perfil.innerHTML = `
             <div class="avatar"> <img src='${i.user.profile_image.large}'> </div>
             <p class="name"> ${i.user.username} </p>
-            <p class="location"> ${i.user.location} </p>
+            <p class="location"> ${i.user.location} <i class="fas fa-map-marker-alt"></i> </p>
         `
+        }else{
+            perfil.innerHTML = `
+            <div class="avatar"> <img src='${i.user.profile_image.large}'> </div>
+            <p class="name"> ${i.user.username} </p>
+            <p class="location"> Unknown <i class="fas fa-map-marker-alt"></i> </p>
+        `
+        }
         perfil.classList.add("informacion-persona")
         let foto = document.createElement("img")
         foto.src = i.links.download
         let descripcion = document.createElement("p")
         descripcion.classList.add("descripcion")
-        descripcion.innerHTML = `<strong> Description: </strong> ${i.description}`
+        if(i.description != null) {
+            descripcion.innerHTML = `<strong> Description: </strong> ${i.description}`
+        }else{
+            descripcion.innerHTML = `<strong> Description: </strong> No photo description`
+        }
         caja.append(perfil)
         caja.append(foto)
         caja.append(descripcion)
